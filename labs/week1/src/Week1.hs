@@ -18,7 +18,14 @@ length [] = 0
 length (x:xs) = 1 + length xs
 
 drop :: Int -> [a] -> [a] 
-drop 0 xs = 
+drop 0 xs =  xs 
+drop n [] = []
+drop n (x:xs) = drop (n-1) xs
+
+take :: Int -> [a] -> [a]
+take 0 xs     = []
+take n []     = []
+take n (x:xs) = x : take (n-1) xs
 
 
 
